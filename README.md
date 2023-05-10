@@ -1,0 +1,8 @@
+# ProyectoPOO1
+Inventario de letras
+
+Link del proceso del trabajo, Formato Carta Gantt 
+https://www.plantuml.com/plantuml/svg/ZP6nJiD038RtF8KNnDGcJO8GJ9KAGmVK36nH1ZVdfbSIkxepIBmz9bKhQ9Qk5t-V_zzPHiMW7R9gKWKvKAimFaN8ixoOPG-ph4oIkkgH2Lil38xWFU0M3z9CHm7P0R7xy_Pe-9g_AAhlJWQ2zN3iQI3MYxBpEjKzJNMBp7GhSNxdsn6-YShBQyX7AET5SGUj_6PHSjSJlUUF22fGrtlLOtnEKmkv_zpE3KdVRAVd5OP0BAcTxjjE9zLcisWQI_X2Et-kDf2AatW9YWh_Lzt7qwV4m5VMG1t2sJYfPrMMrctyPJy0
+
+Link del diagrama UML
+*EN PROCESO
