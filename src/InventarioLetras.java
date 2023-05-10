@@ -31,24 +31,32 @@ public class InventarioLetras {
 	}
 	
 	public int size () {
-		
+		return 0;
 	}
 	
 	public boolean isEmpty () {
-		
+		return true;
 	}
 	
 	public String toString () {
-		
+		return "";
 	}
 	
 	public InventarioLetras add ( InventarioLetras otro ) {
 		
+		InventarioLetras inventarioNuevo = new InventarioLetras("");
+		
+		return inventarioNuevo;
 	}
 	public InventarioLetras amplifies (int n ) {
 		
+		InventarioLetras inventarioNuevo = new InventarioLetras("");
+		
+		return inventarioNuevo;
 	}
 	public InventarioLetras subtract ( InventarioLetras otro ) {
+		InventarioLetras inventarioNuevo = new InventarioLetras("");
 		
+		return inventarioNuevo;
 	}
 }
