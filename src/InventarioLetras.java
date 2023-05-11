@@ -115,6 +115,7 @@ public class InventarioLetras {
 				sb.append(Character.toLowerCase(letra));
 			}
 		}
+
 		sb.append("]");
 		return sb.toString();
 	}

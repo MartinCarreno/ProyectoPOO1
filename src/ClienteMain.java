@@ -9,21 +9,17 @@ public class ClienteMain {
 		InventarioLetras inventario = new InventarioLetras("supercalifragilisticoespialidoso", 1);
 		InventarioLetras vacio = new InventarioLetras("", 2);
 
-		
 		inventario.getCharList();
 		System.out.println();
 		char letraCifrada = inventario.encriptarCesar('o');
 		System.out.println(letraCifrada);
 		System.out.println();
 		System.out.println(inventario.size());
-	    
-	    System.out.println(vacio.isEmpty());
-	    System.out.println(inventario.toString());
-	    System.out.println(inventario.get('i'));
-	    System.out.println(inventario.get('7'));
 
-	    
-	    }
+		System.out.println(vacio.isEmpty());
+		System.out.println(inventario.toString());
+		System.out.println(inventario.get('i'));
+		System.out.println(inventario.get('7'));
+
 	}
-
-
+}
