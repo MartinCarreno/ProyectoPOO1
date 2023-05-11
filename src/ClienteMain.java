@@ -5,8 +5,25 @@ public class ClienteMain {
 		LanguageEs l = new LanguageEs();
 		System.out.println(len.getAbecedario());
 		System.out.println(l.getAbecedario());
+
+		InventarioLetras inventario = new InventarioLetras("supercalifragilisticoespialidoso", 1);
+		InventarioLetras vacio = new InventarioLetras("", 2);
+
 		
-		InventarioLetras inventario = new InventarioLetras("data", 1);
 		inventario.getCharList();
+		System.out.println();
+		char letraCifrada = inventario.encriptarCesar('o');
+		System.out.println(letraCifrada);
+		System.out.println();
+		System.out.println(inventario.size());
+	    
+	    System.out.println(vacio.isEmpty());
+	    System.out.println(inventario.toString());
+	    System.out.println(inventario.get('i'));
+	    System.out.println(inventario.get('7'));
+
+	    
+	    }
 	}
-}
+
+
