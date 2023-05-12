@@ -5,8 +5,7 @@ public class InventarioLetras {
 	private String data;
 	private HashMap<Character, Integer> charList; // para tener el recuento de las letras
 	private int lenguaje;
-	
-	
+
 	// Constructor
 	public InventarioLetras(String data, int lenguaje) { // agrego nuevo parametro para elegir el lenguaje
 		this.data = data;
@@ -55,7 +54,6 @@ public class InventarioLetras {
 		}
 	}
 
-
 	// PRUEBA
 	public char encriptarCesar(char letra) {
 		// Obtener la posición de la letra en el alfabeto
@@ -75,11 +73,10 @@ public class InventarioLetras {
 
 	}
 
-	
-	public HashMap<Character,Integer> getCharList() {
-			return charList;
+	public HashMap<Character, Integer> getCharList() {
+		return charList;
 	}
-	
+
 	public int get(char letra) {
 		letra = Character.toLowerCase(letra);
 		if (!charList.containsKey(letra)) {
@@ -87,11 +84,11 @@ public class InventarioLetras {
 		}
 		return charList.get(letra);
 	}
-	
+
 	public String getData() {
 		return data;
 	}
-	
+
 	public int getLenguaje() {
 		return lenguaje;
 	}
@@ -133,8 +130,7 @@ public class InventarioLetras {
 	}
 
 	public InventarioLetras add(InventarioLetras otro) {
-		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
-		
+		InventarioLetras inventarioNuevo = new InventarioLetras(otro.getData() + this.data, 1);
 		return inventarioNuevo;
 	}
 
