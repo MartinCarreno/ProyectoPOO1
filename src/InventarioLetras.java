@@ -55,10 +55,6 @@ public class InventarioLetras {
 		}
 	}
 
-	// SOLO PARA TESTEAR, Borrar despues
-	public HashMap<Character,Integer> getCharList() {
-		return charList;
-	}
 
 	// PRUEBA
 	public char encriptarCesar(char letra) {
@@ -79,12 +75,25 @@ public class InventarioLetras {
 
 	}
 
+	
+	public HashMap<Character,Integer> getCharList() {
+			return charList;
+	}
+	
 	public int get(char letra) {
 		letra = Character.toLowerCase(letra);
 		if (!charList.containsKey(letra)) {
 			throw new IllegalArgumentException("El caracter no está en el alfabeto");
 		}
 		return charList.get(letra);
+	}
+	
+	public String getData() {
+		return data;
+	}
+	
+	public int getLenguaje() {
+		return lenguaje;
 	}
 
 	public void set(char letra, int valor) {
@@ -125,9 +134,8 @@ public class InventarioLetras {
 
 	public InventarioLetras add(InventarioLetras otro) {
 		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
-
+		
 		return inventarioNuevo;
-
 	}
 
 	public InventarioLetras amplifies(int n) {
