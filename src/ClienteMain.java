@@ -6,8 +6,8 @@ public class ClienteMain {
 		System.out.println(len.getAbecedario());
 		System.out.println(l.getAbecedario());
 
-		InventarioLetras inventario = new InventarioLetras("sd", 1);
-		InventarioLetras inventario2 = new InventarioLetras("sssddd", 2);
+		InventarioLetras inventario = new InventarioLetras("sdd", 1);
+		InventarioLetras inventario2 = new InventarioLetras("sssddd", 1);
 
 		System.out.println(inventario);
 		
@@ -23,6 +23,9 @@ public class ClienteMain {
 		System.out.println(inventario.get('i'));
 		
 		System.out.println(inventario.add(inventario2));
+		System.out.println(inventario.amplifies(1));
+		System.out.println(inventario2.subtract(inventario));
+		System.out.println(inventario.subtract(inventario2));
 		
 
 	}
