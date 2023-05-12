@@ -4,12 +4,14 @@ import java.util.*;
 public class InventarioLetras {
 	private String data;
 	private HashMap<Character, Integer> charList; // para tener el recuento de las letras
-
+	private int lenguaje;
+	
+	
 	// Constructor
 	public InventarioLetras(String data, int lenguaje) { // agrego nuevo parametro para elegir el lenguaje
 		this.data = data;
 		this.charList = new HashMap<Character, Integer>();
-
+		this.lenguaje = lenguaje;
 		// si lenguaje es 1 = ingles, si es 2 = español
 		if (lenguaje == 1) {
 			Language l = new Language();
@@ -54,8 +56,8 @@ public class InventarioLetras {
 	}
 
 	// SOLO PARA TESTEAR, Borrar despues
-	public void getCharList() {
-		System.out.println(this.charList);
+	public HashMap<Character,Integer> getCharList() {
+		return charList;
 	}
 
 	// PRUEBA
@@ -86,7 +88,8 @@ public class InventarioLetras {
 	}
 
 	public void set(char letra, int valor) {
-
+		letra = Character.toLowerCase(letra);
+		charList.put(letra, valor);
 	}
 
 	public int size() {
@@ -129,7 +132,7 @@ public class InventarioLetras {
 
 	public InventarioLetras amplifies(int n) {
 
-		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
+		InventarioLetras inventarioNuevo = new InventarioLetras("", lenguaje);
 
 		return inventarioNuevo;
 	}

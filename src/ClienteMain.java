@@ -7,7 +7,7 @@ public class ClienteMain {
 		System.out.println(l.getAbecedario());
 
 		InventarioLetras inventario = new InventarioLetras("supercalifragilisticoespialidoso", 1);
-		InventarioLetras vacio = new InventarioLetras("", 2);
+		InventarioLetras inventario2 = new InventarioLetras("sssddd", 2);
 
 		inventario.getCharList();
 		System.out.println();
@@ -16,7 +16,7 @@ public class ClienteMain {
 		System.out.println();
 		System.out.println(inventario.size());
 
-		System.out.println(vacio.isEmpty());
+		
 		System.out.println(inventario.toString());
 		System.out.println(inventario.get('i'));
 		System.out.println(inventario.get('7'));
