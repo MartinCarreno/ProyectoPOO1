@@ -57,37 +57,9 @@ public class InventarioLetras {
 		}
 	}
 
-	// PRUEBA
-	public char encriptarCesar(char letra) {
-		// Obtener la posición de la letra en el alfabeto
-		int pos = (int) letra - 97;
-		// Obtener la posición de la letra encriptada en el alfabeto
-		int newPos = (pos + 3) % 26;
-		// Obtener la letra encriptada
-		char newChar = (char) (newPos + 97);
-		return newChar;
-	}
-
-	public void encriptarPalabra(char letra, int valor) {
-
-	}
-
-	public void desencriptarPalabra(char letra, int valor) {
-
-	}
-
 	public HashMap<Character, Integer> getCharList() {
-		return charList;
-	}
-
-	public int get(char letra) {
-		letra = Character.toLowerCase(letra);
-		if (!charList.containsKey(letra)) {
-			throw new IllegalArgumentException("El caracter no está en el alfabeto");
-		}
-		return charList.get(letra);
-	}
-
+	    return charList;
+	} 
 	public String getData() {
 		return data;
 	}
@@ -97,14 +69,21 @@ public class InventarioLetras {
 	}
 
 	public void set(char letra, int valor) {
-		letra = Character.toLowerCase(letra);
-		charList.put(letra, valor);
+	    letra = Character.toLowerCase(letra);
+	    charList.put(letra, valor);
 	}
-	
 	public void setData(String data) {
 		this.data = data;
 	}
 	
+	public int get(char letra) {
+		letra = Character.toLowerCase(letra);
+		if (!charList.containsKey(letra)) {
+			throw new IllegalArgumentException("El caracter no está en el alfabeto");
+		}
+		return charList.get(letra);
+	}
+
 	public int size() {
 		int totalSize = 0;
 		for (int cont : charList.values()) {
@@ -143,41 +122,50 @@ public class InventarioLetras {
 
 	public InventarioLetras amplifies(int n) {
 		InventarioLetras inventarioNuevo;
-		if(n!=1) {
+		if (n != 1) {
 			String datos = "";
-			for(int i = 0; i<n;i++) {
-				datos += data; 
+			for (int i = 0; i < n; i++) {
+				datos += data;
 			}
 			inventarioNuevo = new InventarioLetras(datos, valorLenguaje);
 			return inventarioNuevo;
 		}
 		inventarioNuevo = new InventarioLetras(data, valorLenguaje);
 		return inventarioNuevo;
-		
+
 	}
 
 	public InventarioLetras subtract(InventarioLetras otro) {
 
 		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
-		
+
 		int cont = 0;
 		for (int i = 0; i < lenguaje.getAbecedario().length(); i++) {
 			char caracter = lenguaje.getAbecedario().charAt(i);
-			
+
 			cont = this.get(caracter) - otro.get(caracter);
-			
+
 			if (cont < 0) { // para no tener negativos
 				cont = 0;
 			}
-			
+
 			inventarioNuevo.set(caracter, cont);
 			cont = 0; // se resetea el contador
 		}
-		
-		
-		if(inventarioNuevo.size() == 0) {
+
+		if (inventarioNuevo.size() == 0) {
 			return null;
 		}
 		return inventarioNuevo;
+	}
+	public String contadorLetras() {
+	    StringBuilder contador = new StringBuilder();
+	    
+	    for (char letra = 'a'; letra <= 'z'; letra++) {
+	        int cantidad = this.get(letra);
+	        contador.append(cantidad).append(" ");
+	    }
+	    
+	    return contador.toString().trim();
 	}
 }

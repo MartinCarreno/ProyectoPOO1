@@ -1,32 +1,45 @@
 
 public class ClienteMain {
 	public static void main(String[] args) {
-		Language len = new Language();
-		LanguageEs l = new LanguageEs();
-		System.out.println(len.getAbecedario());
-		System.out.println(l.getAbecedario());
-
-		InventarioLetras inventario = new InventarioLetras("sdd", 1);
-		InventarioLetras inventario2 = new InventarioLetras("sssddd", 1);
-
-		System.out.println(inventario);
 		
-		inventario.getCharList();
-		System.out.println();
-		char letraCifrada = inventario.encriptarCesar('o');
-		System.out.println(letraCifrada);
-		System.out.println();
-		System.out.println(inventario.size());
+
+		InventarioLetras inventario = new InventarioLetras("aaggghhhh", 1);
+		InventarioLetras inventario2 = new InventarioLetras("ggg", 1);
+		InventarioLetras inventario3 = new InventarioLetras("aaggg", 1);
 
 		
-		System.out.println(inventario.toString());
-		System.out.println(inventario.get('i'));
+
+
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('h', 4);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('m', 1);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('g', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('b', 2);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('z', 1);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('p', 4);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('z', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('b', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('a', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('h', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('p', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('m', 0);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
 		
-		System.out.println(inventario.add(inventario2));
-		System.out.println(inventario.amplifies(1));
-		System.out.println(inventario2.subtract(inventario));
-		System.out.println(inventario.subtract(inventario2));
-		
+
+
+
+
 
 	}
 }
