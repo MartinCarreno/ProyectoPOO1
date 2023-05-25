@@ -61,7 +61,8 @@ public class InventarioLetras {
 
 		return charList;
 	}
-
+	
+	
 	public String getData() { // Devuelve los datos almacenados en el inventario
 
 		return data;
@@ -149,28 +150,23 @@ public class InventarioLetras {
 
 	}
 
-	public InventarioLetras subtract(InventarioLetras otro) { // Resta otro inventario del inventario actual y devuelve
-																// un nuevo inventario resultante
-
+	public InventarioLetras subtract(InventarioLetras otro) {
 		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
 
-		int cont = 0;
-		for (int i = 0; i < lenguaje.getAbecedario().length(); i++) {
-			char caracter = lenguaje.getAbecedario().charAt(i);
+		for (char letra = 'a'; letra <= 'z'; letra++) {
+			int cantidad = this.get(letra) - otro.get(letra);
 
-			cont = this.get(caracter) - otro.get(caracter);
-
-			if (cont < 0) { // para no tener negativos
-				cont = 0;
+			if (cantidad < 0) {
+				cantidad = 0; // Asegurarse de que no haya valores negativos
 			}
 
-			inventarioNuevo.set(caracter, cont);
-			cont = 0; // se resetea el contador
+			inventarioNuevo.set(letra, cantidad);
 		}
 
-		if (inventarioNuevo.size() == 0) {
+		if (inventarioNuevo.isEmpty()) {
 			return null;
 		}
+
 		return inventarioNuevo;
 	}
 
