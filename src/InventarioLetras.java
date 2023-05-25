@@ -57,26 +57,33 @@ public class InventarioLetras {
 		}
 	}
 
-	public HashMap<Character, Integer> getCharList() {
-	    return charList;
-	} 
-	public String getData() {
+	public HashMap<Character, Integer> getCharList() { // Devuelve el mapa de caracteres con sus respectivos recuentos
+
+		return charList;
+	}
+
+	public String getData() { // Devuelve los datos almacenados en el inventario
+
 		return data;
 	}
 
-	public int getLenguaje() {
+	public int getLenguaje() { // Devuelve el valor del lenguaje (1 para inglés, 2 para español)
+
 		return valorLenguaje;
 	}
 
-	public void set(char letra, int valor) {
-	    letra = Character.toLowerCase(letra);
-	    charList.put(letra, valor);
+	public void set(char letra, int valor) { // Establece el valor de un carácter en el inventario
+		letra = Character.toLowerCase(letra);
+		charList.put(letra, valor);
 	}
-	public void setData(String data) {
+
+	public void setData(String data) { // Establece los datos del inventario
+
 		this.data = data;
 	}
-	
-	public int get(char letra) {
+
+	public int get(char letra) { // Devuelve el recuento de un carácter específico en el inventario
+
 		letra = Character.toLowerCase(letra);
 		if (!charList.containsKey(letra)) {
 			throw new IllegalArgumentException("El caracter no está en el alfabeto");
@@ -84,7 +91,8 @@ public class InventarioLetras {
 		return charList.get(letra);
 	}
 
-	public int size() {
+	public int size() { // Devuelve el tamaño total del inventario (suma de todos los recuentos)
+
 		int totalSize = 0;
 		for (int cont : charList.values()) {
 			totalSize += cont;
@@ -92,7 +100,8 @@ public class InventarioLetras {
 		return totalSize;
 	}
 
-	public boolean isEmpty() {
+	public boolean isEmpty() { // Verifica si el inventario está vacío (todos los recuentos son 0)
+
 		for (int cont : charList.values()) {
 			if (cont != 0) {
 				return false;
@@ -101,7 +110,8 @@ public class InventarioLetras {
 		return true;
 	}
 
-	public String toString() {
+	public String toString() { // Devuelve una representación en cadena del inventario
+
 		StringBuilder sb = new StringBuilder("[");
 		for (char letra : charList.keySet()) {
 			int count = charList.get(letra);
@@ -115,12 +125,16 @@ public class InventarioLetras {
 		return sb.toString();
 	}
 
-	public InventarioLetras add(InventarioLetras otro) {
+	public InventarioLetras add(InventarioLetras otro) { // Combina el inventario actual con otro inventario y devuelve
+															// un nuevo inventario combinado
+
 		InventarioLetras inventarioNuevo = new InventarioLetras(otro.getData() + this.data, 1);
 		return inventarioNuevo;
 	}
 
-	public InventarioLetras amplifies(int n) {
+	public InventarioLetras amplifies(int n) { // Amplía el inventario actual multiplicando los datos n veces y devuelve
+												// un nuevo inventario ampliado
+
 		InventarioLetras inventarioNuevo;
 		if (n != 1) {
 			String datos = "";
@@ -135,7 +149,8 @@ public class InventarioLetras {
 
 	}
 
-	public InventarioLetras subtract(InventarioLetras otro) {
+	public InventarioLetras subtract(InventarioLetras otro) { // Resta otro inventario del inventario actual y devuelve
+																// un nuevo inventario resultante
 
 		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
 
@@ -158,14 +173,16 @@ public class InventarioLetras {
 		}
 		return inventarioNuevo;
 	}
-	public String contadorLetras() {
-	    StringBuilder contador = new StringBuilder();
-	    
-	    for (char letra = 'a'; letra <= 'z'; letra++) {
-	        int cantidad = this.get(letra);
-	        contador.append(cantidad).append(" ");
-	    }
-	    
-	    return contador.toString().trim();
+
+	public String contadorLetras() { // Devuelve un contador de letras en forma de cadena
+
+		StringBuilder contador = new StringBuilder();
+
+		for (char letra = 'a'; letra <= 'z'; letra++) {
+			int cantidad = this.get(letra);
+			contador.append(cantidad).append(" ");
+		}
+
+		return contador.toString().trim();
 	}
 }

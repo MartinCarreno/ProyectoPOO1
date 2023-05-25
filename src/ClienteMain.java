@@ -35,6 +35,14 @@ public class ClienteMain {
 		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
 		inventario3.set('m', 0);
 		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('g', 3);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('a', 2);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('h', 4);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
+		inventario3.set('m', 1);
+		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " " + inventario3.contadorLetras());
 		
 
 
