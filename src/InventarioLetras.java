@@ -4,56 +4,38 @@ import java.util.*;
 public class InventarioLetras {
 	private String data;
 	private HashMap<Character, Integer> charList; // para tener el recuento de las letras
-	private int valorLenguaje;
+	
 	private Language lenguaje;
 
 	// Constructor
-	public InventarioLetras(String data, int lenguaje) { // agrego nuevo parametro para elegir el lenguaje
-		this.data = data;
+	public InventarioLetras(String data) { // agrego nuevo parametro para elegir el lenguaje
+		this.data = data.toLowerCase();
 		this.charList = new HashMap<Character, Integer>();
-		this.valorLenguaje = lenguaje;
-		// si lenguaje es 1 = ingles, si es 2 = español
-		if (lenguaje == 1) {
-			Language l = new Language();
-			this.lenguaje = l;
-			for (int i = 0; i < l.getAbecedario().length(); i++) {
-				// se crea un hashmap con todas las letras del abecedario y con su valor en 0
-				this.charList.put(l.getAbecedario().charAt(i), 0);
-			}
-
-			// contador de cada letra
-			int cont = 0;
-			for (int i = 0; i < l.getAbecedario().length(); i++) {
-				char caracter = l.getAbecedario().charAt(i);
-				for (int n = 0; n < data.length(); n++) {
-					if (data.charAt(n) == caracter) {
-						cont++;
-					}
-				}
-				this.charList.put(caracter, cont);
-				cont = 0;
-			}
-
+		Language idioma;
+		
+		if (data.contains("ñ")) {
+			 idioma = new LanguageEs();
+		}else {
+			idioma = new Language();
+		}
+		
+		this.lenguaje = idioma;
+		for (int i = 0; i < idioma.getAbecedario().length(); i++) {
+			// se crea un hashmap con todas las letras del abecedario y con su valor en 0
+			this.charList.put(idioma.getAbecedario().charAt(i), 0);
 		}
 
-		else if (lenguaje == 2) {
-			Language l = new LanguageEs(); // Polimorfismo
-			this.lenguaje = l;
-			for (int i = 0; i < l.getAbecedario().length(); i++) {
-				this.charList.put(l.getAbecedario().charAt(i), 0);
-			}
-
-			int cont = 0;
-			for (int i = 0; i < l.getAbecedario().length(); i++) {
-				char caracter = l.getAbecedario().charAt(i);
-				for (int n = 0; n < data.length(); n++) {
-					if (data.charAt(n) == caracter) {
-						cont++;
-					}
+		// contador de cada letra
+		int cont = 0;
+		for (int i = 0; i < idioma.getAbecedario().length(); i++) {
+			char caracter = idioma.getAbecedario().charAt(i);
+			for (int n = 0; n < data.length(); n++) {
+				if (data.charAt(n) == caracter) {
+					cont++;
 				}
-				this.charList.put(caracter, cont);
-				cont = 0;
 			}
+			this.charList.put(caracter, cont);
+			cont = 0;
 		}
 	}
 
@@ -68,10 +50,7 @@ public class InventarioLetras {
 		return data;
 	}
 
-	public int getLenguaje() { // Devuelve el valor del lenguaje (1 para inglés, 2 para español)
 
-		return valorLenguaje;
-	}
 
 	public void set(char letra, int valor) { // Establece el valor de un carácter en el inventario
 		letra = Character.toLowerCase(letra);
@@ -128,8 +107,7 @@ public class InventarioLetras {
 
 	public InventarioLetras add(InventarioLetras otro) { // Combina el inventario actual con otro inventario y devuelve
 															// un nuevo inventario combinado
-
-		InventarioLetras inventarioNuevo = new InventarioLetras(otro.getData() + this.data, 1);
+		InventarioLetras inventarioNuevo = new InventarioLetras(otro.getData() + this.data);
 		return inventarioNuevo;
 	}
 
@@ -142,16 +120,16 @@ public class InventarioLetras {
 			for (int i = 0; i < n; i++) {
 				datos += data;
 			}
-			inventarioNuevo = new InventarioLetras(datos, valorLenguaje);
+			inventarioNuevo = new InventarioLetras(datos);
 			return inventarioNuevo;
 		}
-		inventarioNuevo = new InventarioLetras(data, valorLenguaje);
+		inventarioNuevo = new InventarioLetras(data);
 		return inventarioNuevo;
 
 	}
 
 	public InventarioLetras subtract(InventarioLetras otro) {
-		InventarioLetras inventarioNuevo = new InventarioLetras("", 1);
+		InventarioLetras inventarioNuevo = new InventarioLetras("");
 
 		for (char letra = 'a'; letra <= 'z'; letra++) {
 			int cantidad = this.get(letra) - otro.get(letra);

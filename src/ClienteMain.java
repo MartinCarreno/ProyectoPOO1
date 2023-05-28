@@ -2,10 +2,10 @@
 public class ClienteMain {
 	public static void main(String[] args) {
 
-		InventarioLetras inventario = new InventarioLetras("aaggghhhh", 1);
-		InventarioLetras inventario2 = new InventarioLetras("ggg", 1);
-		InventarioLetras inventario3 = new InventarioLetras("aaggg", 1);
-		InventarioLetras inventario4 = new InventarioLetras("hello", 1);
+		InventarioLetras inventario = new InventarioLetras("aaggghhhh");
+		InventarioLetras inventario2 = new InventarioLetras("ggg");
+		InventarioLetras inventario3 = new InventarioLetras("aaggg");
+		InventarioLetras inventario4 = new InventarioLetras("hello");
 
 		System.out.println(inventario);
 		System.out.println(inventario2);
