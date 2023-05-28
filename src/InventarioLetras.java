@@ -11,24 +11,27 @@ public class InventarioLetras {
 	public InventarioLetras(String data) { // agrego nuevo parametro para elegir el lenguaje
 		this.data = data.toLowerCase();
 		this.charList = new HashMap<Character, Integer>();
-		Language idioma;
+
+
 		
-		if (data.contains("ñ")) {
-			 idioma = new LanguageEs();
+		// verifica si la palabra contiene la ñ para elegir el idioma
+		if (this.data.contains("ñ")) {
+			 this.lenguaje = new LanguageEs();
 		}else {
-			idioma = new Language();
+			this.lenguaje = new Language();
 		}
 		
-		this.lenguaje = idioma;
-		for (int i = 0; i < idioma.getAbecedario().length(); i++) {
-			// se crea un hashmap con todas las letras del abecedario y con su valor en 0
-			this.charList.put(idioma.getAbecedario().charAt(i), 0);
+
+		
+		// se crea un hashmap con todas las letras del abecedario y con su valor en 0
+		for (int i = 0; i < this.lenguaje.getAbecedario().length(); i++) {
+			this.charList.put(this.lenguaje.getAbecedario().charAt(i), 0);
 		}
 
 		// contador de cada letra
 		int cont = 0;
-		for (int i = 0; i < idioma.getAbecedario().length(); i++) {
-			char caracter = idioma.getAbecedario().charAt(i);
+		for (int i = 0; i < this.lenguaje.getAbecedario().length(); i++) {
+			char caracter = this.lenguaje.getAbecedario().charAt(i);
 			for (int n = 0; n < data.length(); n++) {
 				if (data.charAt(n) == caracter) {
 					cont++;
@@ -40,17 +43,13 @@ public class InventarioLetras {
 	}
 
 	public HashMap<Character, Integer> getCharList() { // Devuelve el mapa de caracteres con sus respectivos recuentos
-
 		return charList;
 	}
 	
 	
 	public String getData() { // Devuelve los datos almacenados en el inventario
-
 		return data;
 	}
-
-
 
 	public void set(char letra, int valor) { // Establece el valor de un carácter en el inventario
 		letra = Character.toLowerCase(letra);

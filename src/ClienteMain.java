@@ -2,12 +2,13 @@
 public class ClienteMain {
 	public static void main(String[] args) {
 
-		InventarioLetras inventario = new InventarioLetras("aaggghhhh");
+		InventarioLetras inventario = new InventarioLetras("aaggghhhhñ");
 		InventarioLetras inventario2 = new InventarioLetras("ggg");
 		InventarioLetras inventario3 = new InventarioLetras("aaggg");
 		InventarioLetras inventario4 = new InventarioLetras("hello");
 
 		System.out.println(inventario);
+		
 		System.out.println(inventario2);
 		InventarioLetras sum = inventario.add(inventario2);
 		System.out.println(sum.toString() + " " + sum.size() + " " + sum.isEmpty() + " " + sum.contadorLetras());
@@ -17,7 +18,7 @@ public class ClienteMain {
 		System.out.println(res2.toString() + " " + res2.size() + " " + res2.isEmpty() + " " + res2.contadorLetras());
 		InventarioLetras res3 = res2.subtract(res2);
 		System.out.println(res3);
-		System.out.println(inventario4);
+		System.out.println(inventario4.getData());
 
 		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " "
 				+ inventario3.contadorLetras());
@@ -70,7 +71,6 @@ public class ClienteMain {
 		System.out.println(inventario3.size() + " " + inventario3.toString() + " " + inventario3.isEmpty() + " "
 				+ inventario3.contadorLetras());
 		System.out.println();
-		
 		
 		
 
