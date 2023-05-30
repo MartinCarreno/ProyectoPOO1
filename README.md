@@ -6,3 +6,6 @@ https://www.plantuml.com/plantuml/svg/ZP8zRy9038PtVeMNgXCa0Qf-J4Wf0qD5XcvH1dDdmj
 
 Link del diagrama UML
 https://www.plantuml.com/plantuml/svg/dPBTIWCn48NlzobocMBx0ekKIYaeL11yWjdDc4QooPAPBQZuxcQdFtI9IlLgbtFEV3D9PaKCYOVELwq78lKGzXYovE8MEG6fZqgfXJB0e6hrpCa5AqgxWxHrn5cz1zezGd-xpXAqZ6cUCOmMqp97Rmgc7cads5nv37Q0LwoL2poJ2ekyFlBrB7VOHsV4mD0crsVM6WcIzYElbbboJBxJs1DuQ19S1kTg3pucwJPX6wH_rLdawI0I4OkGhqAGUqTzMUXeq_Ny9beJeqS8edCyt9eOXr_HmHWTESMwkEmSBBH3ITTxz-AGT92-FmPfQ7Xyrxyq-AoE-xI5yN4j7lS86cpHZC7f_1RvxcnT7Au4RQX0PUbgMB7VYyNojC3VckV6lxiRgbOOpD3vBm00
+
+
+una de las dificultades que fueron Vistas y resueltas fue el uso de git en Eclipse, pero lo pudimos solucionar y fuimos capaces de trabajar mucho mas eficiente en eclipse conectado a este repositorio por medio de un token
