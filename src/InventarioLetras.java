@@ -42,6 +42,8 @@ public class InventarioLetras {
 		}
 	}
 	
+	
+	///ENCRIPTADORES
 	public char encriptarCesar(char letra) {
 		
 		
@@ -60,18 +62,44 @@ public class InventarioLetras {
 		return lenguaje.getAbecedario().charAt(newPos);
 	}
 	
+	public char desencriptarCesar(char letra) {
+		// Obtener la posición de la letra en el alfabeto
+				int pos = lenguaje.getAbecedario().indexOf(letra);
+				
+				// Obtener la posición de la letra encriptada en el alfabeto
+				int newPos;
+				if(data.contains("\u00f1")) { // si contiene ñ hace el mod con 27
+					newPos = (pos - 3) % 27;
+				}else {
+					newPos = (pos - 3) % 26;
+				}
+				
+				// Obtener la letra encriptada
+				return lenguaje.getAbecedario().charAt(newPos);
+	}
+	
 	public String encriptarPalabra() {
 		StringBuilder palabraEncriptada = new StringBuilder(); 
 		
 		for(int i = 0 ; i< data.length();i++) 
 			palabraEncriptada.append(encriptarCesar(data.charAt(i)));
 		
-		return palabraEncriptada.toString().trim();
+		this.data = palabraEncriptada.toString();
+		return palabraEncriptada.toString();
 	}
-	public void desencriptarPalabra() {
+	
+	public String desencriptarPalabra() {
+		StringBuilder palabraDesencriptada = new StringBuilder(); 
+		for(int i = 0 ; i< data.length();i++) 
+			palabraDesencriptada.append(desencriptarCesar(data.charAt(i)));
 		
+		this.data = palabraDesencriptada.toString();
+		return palabraDesencriptada.toString();
 	}
 
+	
+	
+	///GETTERS
 	public HashMap<Character, Integer> getCharList() { // Devuelve el mapa de caracteres con sus respectivos recuentos
 		return charList;
 	}
@@ -80,7 +108,18 @@ public class InventarioLetras {
 	public String getData() { // Devuelve los datos almacenados en el inventario
 		return data;
 	}
+	
+	public int get(char letra) { // Devuelve el recuento de un carácter específico en el inventario
 
+		letra = Character.toLowerCase(letra);
+		if (!charList.containsKey(letra)) {
+			throw new IllegalArgumentException("El caracter no está en el alfabeto");
+		}
+		return charList.get(letra);
+	}
+	
+	
+	///SETTERS
 	public void set(char letra, int valor) { // Establece el valor de un carácter en el inventario
 		letra = Character.toLowerCase(letra);
 		charList.put(letra, valor);
@@ -91,14 +130,7 @@ public class InventarioLetras {
 		this.data = data;
 	}
 
-	public int get(char letra) { // Devuelve el recuento de un carácter específico en el inventario
-
-		letra = Character.toLowerCase(letra);
-		if (!charList.containsKey(letra)) {
-			throw new IllegalArgumentException("El caracter no está en el alfabeto");
-		}
-		return charList.get(letra);
-	}
+	
 
 	public int size() { // Devuelve el tamaño total del inventario (suma de todos los recuentos)
 
@@ -129,7 +161,6 @@ public class InventarioLetras {
 				sb.append(Character.toLowerCase(letra));
 			}
 		}
-
 		sb.append("]");
 		return sb.toString();
 	}
