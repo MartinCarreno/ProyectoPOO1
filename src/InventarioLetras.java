@@ -15,7 +15,7 @@ public class InventarioLetras {
 
 		
 		// verifica si la palabra contiene la ñ para elegir el idioma
-		if (this.data.contains("ñ")) {
+		if (this.data.contains("\u00f1")) {
 			 this.lenguaje = new LanguageEs();
 		}else {
 			this.lenguaje = new Language();
@@ -40,6 +40,36 @@ public class InventarioLetras {
 			this.charList.put(caracter, cont);
 			cont = 0;
 		}
+	}
+	
+	public char encriptarCesar(char letra) {
+		
+		
+		// Obtener la posición de la letra en el alfabeto
+		int pos = lenguaje.getAbecedario().indexOf(letra);
+		
+		// Obtener la posición de la letra encriptada en el alfabeto
+		int newPos;
+		if(data.contains("\u00f1")) { // si contiene ñ hace el mod con 27
+			newPos = (pos + 3) % 27;
+		}else {
+			newPos = (pos + 3) % 26;
+		}
+		
+		// Obtener la letra encriptada
+		return lenguaje.getAbecedario().charAt(newPos);
+	}
+	
+	public String encriptarPalabra() {
+		StringBuilder palabraEncriptada = new StringBuilder(); 
+		
+		for(int i = 0 ; i< data.length();i++) 
+			palabraEncriptada.append(encriptarCesar(data.charAt(i)));
+		
+		return palabraEncriptada.toString().trim();
+	}
+	public void desencriptarPalabra() {
+		
 	}
 
 	public HashMap<Character, Integer> getCharList() { // Devuelve el mapa de caracteres con sus respectivos recuentos
