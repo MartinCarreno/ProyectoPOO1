@@ -130,7 +130,11 @@ public class InventarioLetras {
 	public InventarioLetras subtract(InventarioLetras otro) {
 		InventarioLetras inventarioNuevo = new InventarioLetras("");
 
-		for (char letra = 'a'; letra <= 'z'; letra++) {
+		for (int i = 0; i<this.lenguaje.getAbecedario().length(); i++) {
+			
+			// aqui se obtiene el char 
+			char letra = this.lenguaje.getAbecedario().charAt(i);
+			
 			int cantidad = this.get(letra) - otro.get(letra);
 
 			if (cantidad < 0) {
