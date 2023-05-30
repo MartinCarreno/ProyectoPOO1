@@ -7,7 +7,7 @@ public class ClienteMain {
 		InventarioLetras inventario3 = new InventarioLetras("aaggg");
 		InventarioLetras inventario4 = new InventarioLetras("hello");
 
-		System.out.println(inventario);
+		System.out.println(inventario.getCharList());
 		
 		System.out.println(inventario2);
 		InventarioLetras sum = inventario.add(inventario2);

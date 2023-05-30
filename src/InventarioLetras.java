@@ -151,8 +151,8 @@ public class InventarioLetras {
 
 		StringBuilder contador = new StringBuilder();
 
-		for (char letra = 'a'; letra <= 'z'; letra++) {
-			int cantidad = this.get(letra);
+		for (int i = 0; i<this.lenguaje.getAbecedario().length(); i++) { 
+			int cantidad = this.get(this.lenguaje.getAbecedario().charAt(i));
 			contador.append(cantidad).append(" ");
 		}
 
